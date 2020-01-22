@@ -64,7 +64,7 @@ class Product extends React.Component {
 
   static async getInitialProps({ query }) {
     const result = await firestore
-      .collection("fanPages")
+      .collection("events")
       .doc(query.product)
       .get()
       .then(snapshot => {

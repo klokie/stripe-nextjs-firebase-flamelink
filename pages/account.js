@@ -13,7 +13,7 @@ export default class Purchase extends Component {
     // Create Stripe instance in componentDidMount
     // (componentDidMount only fires in browser/DOM environment)
     this.setState({
-      stripe: window.Stripe(process.env.stripeKey)
+      stripe: window.Stripe(process.env.STRIPE_API_KEY)
     });
   }
 

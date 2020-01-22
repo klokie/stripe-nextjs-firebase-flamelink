@@ -14,7 +14,7 @@ exports.createStripeCustomer = functions.auth.user().onCreate(async user => {
 });
 
 exports.createProductPlan = functions.firestore
-  .document("fanPages/{fanpage}")
+  .document("events/{fanpage}")
   .onCreate(async (snap, context) => {
     const val = snap.data();
 
@@ -111,7 +111,7 @@ exports.createStripeCharge = functions.firestore
       // 購入済みメンバーとして登録
       await admin
         .firestore()
-        .collection("fanPages")
+        .collection("events")
         .doc(val.productId)
         .collection("members")
         .doc(context.params.userId)
